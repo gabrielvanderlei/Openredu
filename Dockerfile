@@ -1,15 +1,13 @@
-FROM nginx
-RUN apt-get update -qq
-RUN apt-get -y install apache2-utils
-RUN apt-get -y install python3
-RUN apt-get -y install python3-certbot-nginx
-RUN apt-get -y install cron
-ENV RAILS_ROOT /var/www/rails_app
-WORKDIR $RAILS_ROOT
-RUN rm -Rf ./*
-RUN mkdir -p log
-RUN mkdir -p public
-COPY _nginx/app.conf /tmp/docker_example.nginx
-RUN envsubst '$RAILS_ROOT' < /tmp/docker_example.nginx > /etc/nginx/conf.d/default.conf
-EXPOSE 80
-CMD ["sh", "-c", "cron && crontab /etc/cron.d/certbot && nginx -g 'daemon off;'" ]
+FROM ruby:1.9.3
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs imagemagick
+RUN apt-get install -y default-jre
+RUN mkdir /rails_app
+WORKDIR /rails_app
+COPY ./Gemfile /rails_app/Gemfile
+COPY ./Gemfile.lock /rails_app/Gemfile.lock
+RUN bundle install --full-index
+COPY . /rails_app
+RUN rm -rf /rails_app/_nginx
+EXPOSE 3000
+EXPOSE 8982
+CMD rm -f /app/tmp/pids/server.pid && bundle exec rake sunspot:solr:start && bundle exec puma -C config/puma.rb
