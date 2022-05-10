@@ -1,0 +1,17 @@
+# Retirado de http://forum.openredu.com/t/setup-para-desenvolvimento-com-docker/400
+
+# Instalar Docker
+sudo apt-get install docker
+
+# Instalar Docker Compose
+sudo apt-get install docker-compose
+
+# Construindo container OpenRedu
+cd ../../
+sudo docker-compose build
+sudo docker-compose run --rm app bundle exec rake db:setup
+sudo docker-compose run --rm app bundle exec rake db:setup RAILS_ENV=test
+
+# Subindo container
+sudo docker-compose up
+
