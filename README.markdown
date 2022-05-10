@@ -34,6 +34,14 @@ Em caso de desejar fazer contato direto com a comunidade, existe um [fórum](htt
 Nota: boa parte do que está nesses scripts pode ser reutilizado para outras
 plataformas (não só Mac).
 
+#### Setup com Docker
+É necessário criar as networks e em seguida iniciar o docker-compose.yaml .
+
+    docker network create "vis_default"
+    docker network create "livredoc_default"
+    docker network create "fayeopenredu_default"
+    docker-compose up
+
 #### Dependências
 
 Para fazer o OpenRedu funcionar em ambiente de desenvolvimento você precisará instalar as seguintes dependências:
