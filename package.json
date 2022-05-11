@@ -1,0 +1,30 @@
+{
+  "name": "openredu",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Openredu/Openredu.svg?branch=master)](https://travis-ci.org/Openredu/Openredu)",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielvanderlei/Openredu.git"
+  },
+  "author": "Openredu",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/gabrielvanderlei/Openredu/issues"
+  },
+  "homepage": "https://github.com/gabrielvanderlei/Openredu#readme",
+  "devDependencies": {
+    "cypress": "^9.6.1"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "yamljs": "^0.3.0"
+  }
+}

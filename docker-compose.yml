@@ -64,6 +64,8 @@ services:
     depends_on:
       - mongo
       - db
+    ports:
+      - 3000:3000
     networks: 
       - vis_default
       - livredoc_default

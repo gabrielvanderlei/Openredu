@@ -37,3 +37,5 @@ solr/pids/*
 *.pptx
 *.sh
 docker-compose.override.yml
+node_modules/
+.metals
