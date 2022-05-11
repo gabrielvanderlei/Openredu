@@ -36,7 +36,7 @@ pt-BR:
       - question: Que mês vem antes de julho?
         answer: "junho"
       - question: Quanto é quinze dividido por três?
-        answer: ["cinco", "5"]
+        answers: ["cinco", "5"]
       - question: Quanto é 14 menos 4?
         answers: ["10", "dez"]
       - question: "O que vem em seguida? segunda, terça, quarta, ..."
