@@ -18,7 +18,7 @@ describe('example to-do app', () => {
 
         cy.get('#ck-modal').should('be.checked')
 
-        let user  =`usersasdfadsf`
+        let user  =`user${+new Date()}`
         let email = `${user}@sandro.com`
 
         cy.get('#user_first_name').type('Alex', { force: true });
@@ -30,8 +30,6 @@ describe('example to-do app', () => {
         cy.get('.mail #user_password_confirmation').type('1234567890n', { force: true });
 
         cy.get('#user_tos').check();
-
-        // console.log(await cy.readFile("./config/locales/humanizer.pt-BR.yml", {encoding: 'utf-8'}))
 
         const humanizer= await new Promise((success, error) => {
             cy.readFile("./config/locales/humanizer.pt-BR.yml", {encoding: 'utf-8'}).then(value => {
@@ -54,28 +52,6 @@ describe('example to-do app', () => {
                 }
             })
         })
-
-        // cy.readFile("./config/locales/humanizer.pt-BR.yml", {encoding: 'utf-8'}).then(value => {
-        //     const humanizer = YAML.parse(value)
-
-
-        //     cy.get('.captcha .title').then($question => {
-                
-        //         humanizer["pt-BR"]["humanizer"]["questions"].forEach(captcha => {
-        //             if (captcha["question"] == $question.text()) {
-        //                 let answer = null
-
-        //                 if (captcha["answers"]) answer = captcha["answers"][0]
-        //                 else answer = captcha["answer"]
-
-        //                 cy.get('#user_humanizer_answer').type(answer, { force: true });
-
-        //                 cy.get('#bt_enviar').click();
-        //             }
-        //         })
-        //     })
-        // })
-
     })
   })
   
