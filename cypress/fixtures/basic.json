@@ -1,0 +1,11 @@
+{
+  "name": "User",
+  "lastname": "Name",
+  "user": "username",
+  "email": "username@username.com",
+  "password": "1234567890n",
+  "environment": "2022p2",
+  "environment_initials": "2022p2",
+  "class_name": "Sistema de Informação",
+  "class_name_initials": "si"
+}

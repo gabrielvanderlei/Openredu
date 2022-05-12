@@ -1,1 +1,7 @@
-{}
+{
+  "testFiles": [
+    "register_account.spec.js",
+    "login.spec.js",
+    "register_environment.spec.js"
+  ]
+}
